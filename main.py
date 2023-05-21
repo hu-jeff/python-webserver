@@ -42,7 +42,7 @@ class HTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             </html>
         """
         print(err)
-        self.send(bytes(error_page, 'utf-8'))
+        self.send(bytes(error_page, 'utf-8'), status=404)
 
     def send(self, content, status=200): #contents in bytes
         self.send_response(status)
